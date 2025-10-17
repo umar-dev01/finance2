@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Cash Flow Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="nav-left">
+          <div class="logo-box">
+            <i data-feather="dollar-sign"></i>
+          </div>
+          <h1 class="brand-title">Finance Flow</h1>
+        </div>
+        <div style="display: flex; align-items: center">
+          <div style="margin-right: 1rem" class="nav-user">
+            <select
+              style="
+                color: antiquewhite;
+                background-color: transparent;
+                border: none;
+                font-size: 1rem;
+                color: antiquewhite;
+                /* background-color: rgba(255, 255, 255, 0.1); */
+                /* border: 1px solid rgba(255, 255, 255, 0.2); */
+                /* border-radius: 8px; */
+                padding: 6px 12px;
+                font-size: 1rem;
+                /* backdrop-filter: blur(5px); */
+                /* appearance: none; */
+              "
+              name="cars"
+              id="Currencyselect"
+            >
+              <option class="option-style" value="option-style-USD">USD</option>
+              <option class="option-style" value="option-style-Pound">
+                GBP
+              </option>
+              <option class="option-style" value="option-style-Rial">
+                PKR
+              </option>
+            </select>
+            <!-- <div class="user-avatar">UF</div>
+          <div class="user-info">
+            <p class="user-name">Umar fazal</p>
+            <p class="user-type">Premium Member</p> -->
+            <!-- </div> -->
+          </div>
+          <div class="nav-user">
+            <div class="user-avatar">UF</div>
+            <div class="user-info">
+              <p class="user-name">Umar fazal</p>
+              <p class="user-type">Premium Member</p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <!-- Total Balance -->
+        <div class="card">
+          <div class="flex-between-start">
+            <div class="card-icon">
+              <i data-feather="dollar-sign"></i>
+            </div>
+            <span class="trend">
+              <i data-feather="trending-up" class="icon-small"></i> +12.5%
+            </span>
+          </div>
+          <h3 class="card-title">Total Balance</h3>
+          <p class="card-value total-balane">0,000.00</p>
+          <p class="card-desc">Across all accounts</p>
+        </div>
+        <!-- Monthly Income -->
+        <div class="card income">
+          <div class="flex-between-start">
+            <div class="card-icon">
+              <i data-feather="dollar-sign"></i>
+            </div>
+            <span class="trend">
+              <i data-feather="trending-up" class="icon-small"></i> +8.2%
+            </span>
+          </div>
+          <h3 class="card-title">Monthly Income</h3>
+          <p class="card-value Monthly-income">0,0000.00</p>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+            class="reset-box"
+          >
+            <p class="card-desc">This month</p>
+            <button
+              style="
+                background-color: #f87171;
+                padding: 2px 6px;
+                border: 2px solid #f87171;
+                color: #065f46;
+                font-weight: 500;
+              "
+              class="reset-btn trend"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <!-- Monthly Expenses -->
+        <div class="card expense">
+          <div class="flex-between-start">
+            <div class="card-icon">
+              <i data-feather="trending-down"></i>
+            </div>
+            <span class="trend">
+              <i data-feather="trending-down" class="icon-small"></i> -3.1%
+            </span>
+          </div>
+          <h3 class="card-title">Monthly Expenses</h3>
+          <p class="card-value expence-value">0,000.0</p>
+          <p class="card-desc">This month</p>
+        </div>
+      </div>
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <div class="quick-actions-header">
+          <div class="icon"><i data-feather="zap"></i></div>
+          <h2 class="quick-actions-title">Quick Actions</h2>
+        </div>
+        <div class="quick-actions-grid">
+          <button class="quick-btn" data-type="income">
+            <i data-feather="plus-circle" class="icon"></i>
+            <span class="font-medium">Add Income</span>
+            <span class="text-xs">Record new income</span>
+          </button>
+          <button class="quick-btn secondary red" data-type="Expense">
+            <i data-feather="minus-circle" class="icon"></i>
+            <span class="font-medium">Add Expense</span>
+            <span class="text-xs">Track your spending</span>
+          </button>
+          <button class="quick-btn secondary blue" data-type="Transfer">
+            <i data-feather="refresh-cw" class="icon"></i>
+            <span class="font-medium">Transfer</span>
+            <span class="text-xs">Between accounts</span>
+          </button>
+          <button class="quick-btn secondary purple" data-type=" reset">
+            <img style="width: 1.8rem" src="img/reset-icon.svg" alt="" />
+            <span class="font-medium">Reset</span>
+            <span class="text-xs">factory reset</span>
+          </button>
+        </div>
+      </div>
+      <!-- Recent Transactions -->
+      <div class="transactions">
+        <div class="transactions-header">
+          <div class="icon"><i data-feather="list"></i></div>
+          <h2 class="transactions-title">Recent Transactions</h2>
+          <a href="#"
+            >View All
+            <i data-feather="chevron-right" class="icon-small icon-left"></i
+          ></a>
+        </div>
+        <div class="transactions-list">
+          <!-- Transaction 1 -->
+          <!-- <div class="transaction">
+            <div class="flex-align-center">
+              <div style="width: 20%" class="icon-box">
+                <img src="img/icon-expanse.svg" alt="" /> 
+              </div>
+              <div class="transaction-info">
+                <h3>Salary Payment</h3>
+                <div class="meta">
+                  <span
+                    ><i data-feather="credit-card" class="icon-xsmall"></i> Bank
+                    Account</span
+                  >
+                  <span
+                    ><i data-feather="calendar" class="icon-xsmall"></i> Today,
+                    9:30 AM</span
+                  >
+                </div>
+              </div>
+            </div>
+            <p class="amount positive">+$4,200.00</p>
+          </div> -->
+          <!-- Transaction 2 -->
+          <!-- <div class="transaction expense">
+            <div class="flex-align-center">
+              <div class="icon-box">
+                <i data-feather="shopping-cart"></i>
+              </div>
+              <div class="transaction-info">
+                <h3>Grocery Shopping</h3>
+                <div class="meta">
+                  <span
+                    ><i data-feather="shopping-bag" class="icon-xsmall"></i>
+                    Whole Foods</span
+                  >
+                  <span
+                    ><i data-feather="calendar" class="icon-xsmall"></i>
+                    Yesterday, 6:15 PM</span
+                  >
+                </div>
+              </div>
+            </div>
+            <p class="amount negative">-$127.50</p>
+          </div> -->
+          <!-- Transaction 3 -->
+          <!-- <div class="transaction expense">
+            <div class="flex-align-center">
+              <div class="icon-box">
+                <i data-feather="droplet"></i>
+              </div>
+              <div class="transaction-info">
+                <h3>Gas Station</h3>
+                <div class="meta">
+                  <span
+                    ><i data-feather="map-pin" class="icon-xsmall"></i> Shell
+                    Station</span
+                  >
+                  <span
+                    ><i data-feather="calendar" class="icon-xsmall"></i>
+                    Yesterday, 2:45 PM</span
+                  >
+                </div>
+              </div>
+            </div>
+            <p class="amount negative">-$65.20</p>
+          </div> -->
+        </div>
+      </div>
+      <!-- Charts Section -->
+      <div class="charts-grid">
+        <!-- Spending by Category -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2 class="chart-title">
+              <i data-feather="pie-chart" class="icon-primary"></i>Spending by
+              Category
+            </h2>
+            <span class="chart-badge">This Month</span>
+          </div>
+          <div class="chart-placeholder">Interactive Pie Chart</div>
+        </div>
+        <!-- Balance Trend -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2 class="chart-title">
+              <i data-feather="activity" class="icon-primary"></i>Balance Trend
+            </h2>
+            <span class="chart-badge">Last 6 Months</span>
+          </div>
+          <div class="chart-placeholder">Balance Over Time</div>
+        </div>
+      </div>
+      <!-- Financial Insights -->
+      <div class="insights">
+        <div class="insights-header">
+          <div class="icon"><i data-feather="lightbulb"></i></div>
+          <h2 class="insights-title">Financial Insights</h2>
+        </div>
+        <div class="insights-grid">
+          <div class="insight green">
+            <h3 class="insight-title">Great Savings Rate!</h3>
+            <p class="insight-desc">
+              You're saving 38% of your income this month. Keep up the excellent
+              work!
+            </p>
+          </div>
+          <div class="insight yellow">
+            <h3 class="insight-title">Dining Out Alert</h3>
+            <p class="insight-desc">
+              Your restaurant spending is 25% higher than last month. Consider
+              cooking more at home.
+            </p>
+          </div>
+          <div class="insight">
+            <h3 class="insight-title primary">Budget on Track</h3>
+            <p class="insight-desc">
+              You're 15% under budget for entertainment this month. You have
+              $180 left to spend.
+            </p>
+          </div>
+          <div class="insight blue">
+            <h3 class="insight-title">Investment Opportunity</h3>
+            <p class="insight-desc">
+              With your current savings rate, consider increasing your
+              investment contributions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Add Income Modal (hidden by default) -->
+    <!-- <div class="modal-overlay hidden" id="addIncomeModal">
+      <div class="modal">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header">
+          <div class="icon"><i data-feather="plus-circle"></i></div>
+          <span class="modal-title">Add Income</span>
+        </div>
+        <form class="modal-form">
+          <div>
+            <label for="income-source">Source</label>
+            <input
+              type="text"
+              id="income-source"
+              name="income-source"
+              placeholder="e.g. Salary, Freelance"
+            />
+          </div>
+          <div>
+            <label for="income-amount">Amount</label>
+            <input
+              type="number"
+              id="income-amount"
+              name="income-amount"
+              placeholder="$0.00"
+            />
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn">Add</button>
+            <button
+              type="button"
+              class="btn"
+              style="background: var(--dark-600); color: var(--gray-100)"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div> -->
+    <!-- End Modal -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script defer type="module" src="controller.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
