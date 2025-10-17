@@ -792,4 +792,10 @@ main {
   .modal {
     width: 95%;
   }
+  nav {
+    display: inherit;
+  }
+  .for-flex {
+    margin-left: 7rem;
+  }
 }
