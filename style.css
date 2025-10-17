@@ -469,12 +469,12 @@ main {
 .chart-placeholder {
   background: var(--dark-700);
   border-radius: 0.75rem;
-  height: 16rem;
+  /* height: 16rem; */
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--gray-500);
-  font-size: 1.1rem;
+  /* justify-content: center; */
+  /* color: var(--gray-500); */
+  /* font-size: 1.1rem; */
 }
 /* Financial Insights */
 .insights {
