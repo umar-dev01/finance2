@@ -799,3 +799,8 @@ main {
     margin-left: 7rem;
   }
 }
+@media (max-width: 480px) {
+  .for-flex {
+    margin-left: 0rem;
+  }
+}
