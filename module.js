@@ -29,6 +29,7 @@ export const quickClickOpenMod = function () {
       const addQuickBtn = currentModal.querySelector(".btn-add");
       const amount = currentModal.querySelector("#amount");
       const source = currentModal.querySelector("#source");
+      const modalResetCancel = document.querySelector(".modal-reset-cancel");
 
       currentModal.classList.remove("hidden");
 
@@ -87,14 +88,21 @@ export const quickClickOpenMod = function () {
 };
 export const resetMothIncome = function () {
   resetBtn.addEventListener("click", () => {
+    // Inject modal HTML into body
     document.body.insertAdjacentHTML("beforeend", View.getresetmarkup());
-    document.querySelector(".modal-overlay").classList.remove("hidden");
 
-    const resetAmount = document.querySelector(".reset-value");
-    const reset = document.querySelector(".reset");
-
+    // Select modal and elements
+    const modalOverlay = document.querySelector(".modal-overlay");
+    const modal = modalOverlay.querySelector(".modal");
+    const resetAmount = modalOverlay.querySelector(".reset-value");
+    const reset = modalOverlay.querySelector(".reset");
+    const closeBtn = modalOverlay.querySelector(".close-reset-model");
+    // Show modal
+    modalOverlay.classList.remove("hidden");
+    // ✅ Reset Button
     reset.addEventListener("click", () => {
-      const inputAmount = Number(resetAmount.value); // ✅ Moved inside click
+      const inputAmount = Number(resetAmount.value);
+
       if (isNaN(inputAmount) || inputAmount < 0) {
         alert("Please enter a valid income amount.");
         return;
@@ -106,8 +114,27 @@ export const resetMothIncome = function () {
         helper.state.currentCurrency
       );
 
-      document.querySelector(".modal-overlay").classList.add("hidden");
+      // Close modal
+      closeModal();
     });
+
+    // ✅ Cancel Button
+    closeBtn.addEventListener("click", closeModal);
+
+    // ✅ Click Outside to Close
+    modalOverlay.addEventListener("click", (e) => {
+      // if user clicks outside the .modal box
+      if (!modal.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    // 🔹 Helper Function to Close and Clean Up Modal
+    function closeModal() {
+      modalOverlay.classList.add("hidden");
+      setTimeout(() => modalOverlay.remove(), 200); // delay for smoothness
+    }
   });
 };
+
 // helper.ex(expenceValue);

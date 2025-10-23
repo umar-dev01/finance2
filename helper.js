@@ -9,12 +9,14 @@ export const state = {
   },
   currentCurrency: "USD", // 🟢 Track current currency globally
 };
+// console.log(state.currentCurrency);
 
 // 🔹 curnncy API
 const currencySelect = document.getElementById("Currencyselect");
 const monthlyIncome = document.querySelector(".Monthly-income");
 const totalBalance = document.querySelector(".total-balane");
 const expenceValue = document.querySelector(".expence-value");
+// console.log(chartAmount.textContent);
 
 // 🔹 Keep track of the current currency (start with USD)
 let currentCurrency = "USD";
@@ -48,12 +50,18 @@ if (currencySelect) {
     else if (currencySelect.value === "option-style-Rial")
       targetCurrency = "PKR";
     else return;
+    const chartAmount = document.querySelectorAll(".chart-amount");
 
     // Skip if same currency selected again
     if (targetCurrency === currentCurrency) return;
 
     // Convert all displayed values from current → target currency
-    const elements = [monthlyIncome, totalBalance, expenceValue];
+    const elements = [
+      monthlyIncome,
+      totalBalance,
+      expenceValue,
+      ...chartAmount,
+    ];
 
     for (const el of elements) {
       if (!el) continue;
@@ -74,11 +82,12 @@ if (currencySelect) {
     currentCurrency = targetCurrency;
     state.currentCurrency = targetCurrency;
 
-    console.log(`✅ Currency switched: ${currentCurrency}`);
+    // console.log(`✅ Currency switched: ${currentCurrency}`);
   });
 }
 
 // 🔹 Format currency
+
 export function formatCurrency(value, code) {
   return `${Number(value).toLocaleString("en-US", {
     minimumFractionDigits: 2,

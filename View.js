@@ -66,36 +66,34 @@ export const generateMarkuptrance = function (curtype, source, inputAmount) {
   const formattedDate = `${currentDate.getDate()}-${
     currentDate.getMonth() + 1
   }-${currentDate.getFullYear()}`;
-
-  // ✅ Added time formatting (new functionality)
   const formattedTime = currentDate.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
   });
 
   return `
-  <div class="transaction">
+  <div class="transaction" style="position: relative;">
+    <button class="delete-transaction-btn hidden-btn">&times;</button>
     <div class="flex-align-center">
       <div style="width: 20%" class="icon-box">
-         <img src="img/icon-${curtype}.svg" alt="" /> 
+        <img src="img/icon-${curtype}.svg" alt="" /> 
       </div>
       <div class="transaction-info">
         <h3>${source}</h3>
-        <div width: 114%; class="meta">
-          <span width: 100%; >
-            <i data-feather="credit-card" class="icon-xsmall"></i> Bank Account
-          </span>
-          <span width: 100%;>
-            <i data-feather="calendar" class="icon-xsmall"></i> ${formattedDate}, ${formattedTime}
-          </span>
+        <div class="meta">
+          <span><i data-feather="credit-card" class="icon-xsmall"></i> Bank Account</span>
+          <span><i data-feather="calendar" class="icon-xsmall"></i> ${formattedDate}, ${formattedTime}</span>
         </div>
       </div>
     </div>
-    <p class="amount ${curtype === "income" ? "positive" : "negative"}">
+    <p class="amount chart-amount ${
+      curtype === "income" ? "positive" : "negative"
+    }">
       $${inputAmount}
     </p>
   </div>`;
 };
+
 export const getresetmarkup = function () {
   return `<div
   style="display: flex; align-items: center; justify-content: center;"
@@ -108,6 +106,7 @@ export const getresetmarkup = function () {
       <p class="insight-desc">Are you sure to reset</p>
         <input  placeholder="Amount" style="border:none; border-radius: 12px; padding: 6px 2px;" class="reset-value" type="number" />
     </div>
+    <div style="display:flex; justify-content: space-between;">
     <button
       style="
         border-radius: 12px;
@@ -121,6 +120,27 @@ export const getresetmarkup = function () {
     >
       Reset
     </button>
+    <button
+      style="
+        border-radius: 12px;
+          background-color: #6b7280;
+          padding: 4px 10px;
+          border: 2px solid #6b7280;
+          color: #ffffff;
+          font-weight: 500;
+      "
+      class="btn btn-add  close-reset-model"
+    >
+      Cancel
+    </button>
+    
+    </div>
   </div>
 </div>`;
 };
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-transaction-btn")) {
+    const transaction = e.target.closest(".transaction");
+    transaction.remove();
+  }
+});

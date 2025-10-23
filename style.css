@@ -804,3 +804,26 @@ main {
     margin-left: 0rem;
   }
 }
+.transaction {
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.delete-transaction-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.transaction:hover .delete-transaction-btn {
+  opacity: 1;
+}
