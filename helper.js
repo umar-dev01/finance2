@@ -42,7 +42,7 @@ async function convertCurrency(from, to, amount) {
 if (currencySelect) {
   currencySelect.addEventListener("change", async function () {
     let targetCurrency = "";
-
+    // export targetCurrency
     // Match dropdown value with real currency code
     if (currencySelect.value === "option-style-USD") targetCurrency = "USD";
     else if (currencySelect.value === "option-style-Pound")
@@ -51,6 +51,7 @@ if (currencySelect) {
       targetCurrency = "PKR";
     else return;
     const chartAmount = document.querySelectorAll(".chart-amount");
+    console.log(targetCurrency);
 
     // Skip if same currency selected again
     if (targetCurrency === currentCurrency) return;

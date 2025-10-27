@@ -61,38 +61,38 @@ export const modalInnerHtml = function (curtype) {
   `;
 };
 
-export const generateMarkuptrance = function (curtype, source, inputAmount) {
-  const currentDate = new Date();
-  const formattedDate = `${currentDate.getDate()}-${
-    currentDate.getMonth() + 1
-  }-${currentDate.getFullYear()}`;
-  const formattedTime = currentDate.toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+// export const generateMarkuptrance = function (curtype, source, inputAmount) {
+//   const currentDate = new Date();
+//   const formattedDate = `${currentDate.getDate()}-${
+//     currentDate.getMonth() + 1
+//   }-${currentDate.getFullYear()}`;
+//   const formattedTime = currentDate.toLocaleTimeString("en-US", {
+//     hour: "2-digit",
+//     minute: "2-digit",
+//   });
 
-  return `
-  <div class="transaction" style="position: relative;">
-    <button class="delete-transaction-btn hidden-btn">&times;</button>
-    <div class="flex-align-center">
-      <div style="width: 20%" class="icon-box">
-        <img src="img/icon-${curtype}.svg" alt="" /> 
-      </div>
-      <div class="transaction-info">
-        <h3>${source}</h3>
-        <div class="meta">
-          <span><i data-feather="credit-card" class="icon-xsmall"></i> Bank Account</span>
-          <span><i data-feather="calendar" class="icon-xsmall"></i> ${formattedDate}, ${formattedTime}</span>
-        </div>
-      </div>
-    </div>
-    <p class="amount chart-amount ${
-      curtype === "income" ? "positive" : "negative"
-    }">
-      $${inputAmount}
-    </p>
-  </div>`;
-};
+//   return `
+//   <div class="transaction" style="position: relative;">
+//     <button class="delete-transaction-btn hidden-btn">&times;</button>
+//     <div class="flex-align-center">
+//       <div style="width: 20%" class="icon-box">
+//         <img src="img/icon-${curtype}.svg" alt="" />
+//       </div>
+//       <div class="transaction-info">
+//         <h3>${source}</h3>
+//         <div class="meta">
+//           <span><i data-feather="credit-card" class="icon-xsmall"></i> Bank Account</span>
+//           <span><i data-feather="calendar" class="icon-xsmall"></i> ${formattedDate}, ${formattedTime}</span>
+//         </div>
+//       </div>
+//     </div>
+//     <p class="amount chart-amount ${
+//       curtype === "income" ? "positive" : "negative"
+//     }">
+//       ${inputAmount}
+//     </p>
+//   </div>`;
+// };
 
 export const getresetmarkup = function () {
   return `<div

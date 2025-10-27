@@ -57,6 +57,7 @@ body {
   font-family: "Segoe UI", "Arial", sans-serif;
   background: var(--dark-900);
   color: #f3f4f6;
+  overflow-x: hidden;
 }
 body {
   min-height: 100vh;
@@ -802,6 +803,29 @@ main {
 @media (max-width: 480px) {
   .for-flex {
     margin-left: 0rem;
+  }
+
+  .for-hidden {
+    display: none;
+  }
+  .chart-amount {
+    margin-left: -11rem;
+    margin-bottom: -3rem;
+  }
+  .flex-align-center {
+    padding: 3px;
+  }
+  .icon-box {
+    margin-left: -1rem;
+  }
+  .transaction-info {
+    margin-bottom: 13px;
+  }
+  .chart-title {
+    font-size: 1rem;
+  }
+  .chart-header {
+    display: block !important;
   }
 }
 .transaction {
