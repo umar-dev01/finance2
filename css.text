@@ -1,0 +1,8 @@
+ #include<iostream>
+using namespace std;
+int main() {
+    int s;
+    cout << "";
+    cin >>s;
+    cout<<"hello world" << s;
+}
